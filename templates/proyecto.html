@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block titulo%}
+	<h1>Proyecto</h1>
+	<title></title>
+	<meta charset="UFT-8">
+	<meta name= "viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+{% endblock %}
+
+{% block content %}
+	{% if info_enviado %}
+
+		<h2>Registre su banda para el gran concurso de canto </h2>
+		{{nombre }}
+		{{ descripcion }}
+
+	{% else %}
+
+		<form action="" method="POST">
+			{% csrf_token %}
+			{{ formulario.as_p }}
+			<input type="submit" name="Guardar">
+
+		</form>
+	{% endif %}
+ 
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+<title>ver banda</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+{% endblock%}
+
+{% block content %}<br>
+	<h1>{{ p.nombre_banda }}<br></h1><br>
+	<div class="ver">
+		
+		Numero integrantes: {{ p.numero_integrantes }}<br>
+		Nacionalidad: {{ p.nacionalidad }}<br>
+		foto: <br> <img src="/media/{{ p.photo }}" alt="" width="250px" height="150"><br>
+
+		
+	</div>
+	<h2>Integrantes</h2>
+	<div class="verinte">
+		
+		{% for p in integrantes.all %}
+		 	<h3>{{p}}</h3>
+		 	<p>
+		 		Nombre:{{p.nombre}}<br>
+		 		Edad: {{p.edad}}<br>
+		 		Genero:{{p.genero}}<br>
+		 		Direccion: {{p.direccion}}<br>
+		 		{% for i in p.roles.all %}
+
+					Rol: {{ i }}<br>
+								
+					{% endfor %}
+				foto: <br><img src="/media/{{ p.foto }}" alt="" width="250px" height="150px"><br><br>
+
+		 	</p>
+		{% endfor %}
+		
+	</div>
+
+	
+	
+{% endblock %}	

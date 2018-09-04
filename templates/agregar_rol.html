@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title> agregar rol </title>
+{% endblock%}	
+
+{% block content %}<br>
+	<h1>Agregar Rol</h1><br>
+	<div class="col-sm-6">
+			    <div class="card">
+			      <div class="card-body">
+			        <h5 class="card-title">Rol</h5>
+			        <p class="card-text"><form action="" method="POST" enctype="multipart/form-data">
+						{% csrf_token %}
+						{{ formulario.as_p }}<br></p>
+			        <button type="submit" class="btn btn-outline-info">Agregar Rol</button><br>
+			        </form>
+			      </div>
+			    </div>
+			</div>
+		</div>
+
+
+
+
+	
+
+{% endblock %}	

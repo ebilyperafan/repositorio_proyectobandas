@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+	<title>Perfil</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% endblock %}
+
+{% block content %}
+	<h1>Perfil de usuario</h1>
+	{{ ver_perfil }}	
+	<h3>{{p}}</h3>
+	<p>
+		Nombre :{{ver_perfil.user}}
+		Identificacion:{{ver_perfil.identificacion}}
+		Edad : {{ver_perfil.edad}}
+		Foto: <br><img src="/media/{{ ver_perfil.perfiles }}" alt="" width="250px" height="150px"><br>	</p>
+{% endblock %}

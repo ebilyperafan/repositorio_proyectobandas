@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block  titulo %}
+<title>listar rol</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+{% endblock%}
+
+{% block content %}<br>
+	<h1>Roles</h1><br>
+	<!--<h2>{{listar_rol}}</h2>-->
+<div class="listar">
+	
+		<nav class="card-rol">
+		
+			<div class="card-body">
+				{% for p in listar_rol.all %}
+					<h3>{{p}}</h3>
+					<p>
+					
+			    <h5 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rol: {{ p.nombre_rol }}<br></font></font></h5>
+			    
+			    	</p>
+			    <a href="/ver_rol/{{ p.id }}" class="btn btn-primary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ver detalles </font></font></a>
+
+			    <a href="/editar_rol/{{ p.id }}" class="btn btn-primary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Editar</font></font></a>
+
+			    <a href="/eliminar_rol/{{ p.id }}" class="btn btn-primary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Eliminar</font></font></a>
+
+		   
+
+				{% endfor %}
+	   		</div>
+	   </nav> 
+	</div>
+
+
+
+
+
+
+
+	
+	
+
+	
+{% endblock %}		

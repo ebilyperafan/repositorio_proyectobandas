@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+<title>registrar</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% endblock %}
+
+{% block content %}<br>
+	<h1> Registrar Usuario </h1><br>
+	<h2>{{ msj }} </h2>
+
+	<div class="login">
+		
+		<form action="" method="POST" accept-charset="utf-8">
+		
+			{% csrf_token %}
+			{{ formulario.as_p }}<br>
+			<button type="submit" class="btn btn-outline-info">Registrarse</button><br>
+		
+		</form>
+
+		
+	</div>
+{% endblock %}

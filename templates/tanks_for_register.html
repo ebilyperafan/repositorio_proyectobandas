@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block titulo %}	
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title> bienvenidos</title>
+{% load static %}
+
+	
+
+{% endblock %}
+
+{% block content %}
+	<h1> Gracias por registrarse </h1>
+	<div class="jumbotron">
+		<h3 class="display-4">Bienvenido a CEDS POP</h3>
+			<p class="lead">Registre su banda he interartue con nosotros, queremos hacerte sentir como es casa, disfruta de la vida y eaprende a escuchar desde el corazon.</p>
+			   <hr class="my-4">
+			  		<p>Si desea iniciar sesion de click en el boton de lo contrario, esperamos que sea de su agrado todo el contenido visual.</p>
+			  		<a class="btn btn-primary btn-lg" href="{% url 'vista_crear_perfil' %}" role="button">Crear perfil</a>
+	</div>
+	
+
+	<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+			  <div class="carousel-inner">
+			    <div class="carousel-item active">
+			      <img class="d-block w-100" src="{% static 'imagenes/tanks1.jpg' %}"  width="700px" height="470px"  alt="First slide">
+			    </div>
+			    <div class="carousel-item">
+			      <img class="d-block w-100" src="{% static 'imagenes/tanks2.jpg' %}"  width="700px" height="470px" alt="Second slide">
+			    </div>
+			    <div class="carousel-item">
+			      <img class="d-block w-100" src="{% static 'imagenes/tanks3.png' %}" width="700px" height="470px" alt="Third slide">
+			    </div>
+			  </div>
+	</div>
+
+	
+
+{% endblock %}

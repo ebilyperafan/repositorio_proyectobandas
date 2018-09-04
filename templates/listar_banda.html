@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block  titulo %}
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>listar banda</title>
+{% endblock%}
+
+{% block content %}<br>
+	<h1>Bandas Participantes</h1><br>
+	
+			<div class="col-sm-6" >
+			    <div class="card">
+				    <div class="card-body">
+				      	{% for p in listar_banda.all %}
+						<h3>{{p}}</h3>
+				        foto: <br><img src="/media/{{ p.photo }}" alt="" width="450px" height="250px"><br>
+					   	<p>
+					   		<h5 class="card-title">
+					   			Nombre: {{ p.nombre_banda }}<br>
+					   			Numero Integrantes: {{ p.numero_integrantes}}<br></h5>
+					   			Nacionalidad: {{ p.nacionalidad }}<br>
+				    	</p>
+				        <a href="/ver_banda/{{ p.id }}" class="btn btn-primary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ver detalles </font></font></a>
+				        {% if user.is_authenticated %}
+
+					    <a href="/editar_banda/{{ p.id }}" class="btn btn-primary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Editar</font></font></a>
+
+					    <a href="/eliminar_banda/{{ p.id }}" class="btn btn-primary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Eliminar</font></font></a>
+					    {% endif %}
+
+			   			{% endfor %}
+   			       </div>
+			    </div>
+			</div>
+		
+
+
+
+		
+			
+
+
+
+
+
+
+
+		
+			  
+	
+	
+{% endblock %}		
+
+	
+

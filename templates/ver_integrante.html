@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+<title>ver integrante</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+{% endblock%}
+
+{% block content %}<br>
+	<h1>Detalles del integrante</h1><br>
+	<div class="ver">
+		
+		Nombre: {{ p.nombre }}<br>
+		Edad: {{ p.edad }}<br>
+		Genero: {{ p.genero }}<br>
+		{% for i in p.roles.all %}
+
+				Rol: {{ i }}
+				
+	     		{% endfor %}
+	     		<br>
+		Nombre de la banda: {{ p.banda }}<br>
+		Direccion: {{ p.direccion }}<br>
+		foto: <br><img src="/media/{{ p.foto }}" alt="" width="200px" height="150px">
+	</div>
+
+{% endblock %}	
